@@ -9,14 +9,24 @@ $confirm_password = $_POST['confirm_password'];
 
 // Проверка на совпадение паролей
 if ($password !== $confirm_password) {
-    die("Пароли не совпадают.");
+   
+    $errorCode = '127'; // Change this to the desired error code
+    $errorMessage = 'Пароли не совпадают.'; // Change this to the desired error message
+    header("Location: error.php?code=$errorCode&message=$errorMessage");
+    exit();
+
 }
 
 // Проверка на уникальность почты и телефона
 $query = "SELECT * FROM users WHERE email='$email' OR phone='$phone'";
 $result = mysqli_query($conn, $query);
 if (mysqli_num_rows($result) > 0) {
-    die("Пользователь с таким email или телефоном уже существует.");
+    $errorCode = '128'; 
+ 
+    $errorMessage = 'Пользователь с таким email или телефоном уже существует.'; 
+    header("Location: error.php?code=$errorCode&message=$errorMessage");
+    exit();
+
 }
 
 // Хэширование пароля
