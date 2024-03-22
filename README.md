@@ -16,7 +16,7 @@ This project contains the following files and scripts:
 ## Usage
 
 1. Put all files in the `www` folder in the WAMP folder.
-2. First, you should create the database using `CreateDB.php`. To access this file, rename `index.php` to another name (e.g., `index00.php`).
+2. First, you should create the database using `CreateDB.php`.
 3. After creating the database, rename `index00.php` back to `index.php`.
 4. Then refresh the page. It will automatically open the index file, which contains the registration and login forms.
 
