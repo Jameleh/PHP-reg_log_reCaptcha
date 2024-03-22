@@ -11,6 +11,7 @@ This project contains the following files and scripts:
 - **auth.php**: Script to check user authentication.
 - **database.php**: Script to connect to the database and execute queries.
 - **Tasks.txt**: Text of the test assignment.
+- **error.php**: Error page for displaying different error messages based on the error code.
 
 ## Usage
 

@@ -37,14 +37,28 @@ if ($recaptcha_response->success) {
             $_SESSION['user_id'] = $row['id'];
             header("Location: profile.php");
         } else {
-            die("Неверный пароль.");
+            // Redirect to the error page with a specific error code and message
+       $errorCode = '120'; // Change this to the desired error code
+       $errorMessage = 'Неверный пароль.'; // Change this to the desired error message
+       header("Location: error.php?code=$errorCode&message=$errorMessage");
+       exit();
+
+          
         }
     } else {
-        die("Пользователь не найден.");
+        $errorCode = '121'; // Change this to the desired error code
+        $errorMessage = 'пользователь не найден'; // Change this to the desired error message
+        header("Location: error.php?code=$errorCode&message=$errorMessage");
+        exit();
+ 
     }
 
 } else {
     // reCAPTCHA verification failed
-    echo "reCAPTCHA verification failed. Please try again.";
+    
+    $errorCode = '122'; // Change this to the desired error code
+    $errorMessage = 'reCAPTCHA verification failed. Please try again'; // Change this to the desired error message
+    header("Location: error.php?code=$errorCode&message=$errorMessage");
+    exit();
 }
 ?>

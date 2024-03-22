@@ -28,7 +28,11 @@ if (!empty($new_password)) {
 if (mysqli_query($conn, $update_query)) {
     echo "Профиль успешно обновлен.";
 } else {
-    echo "Ошибка при обновлении профиля: " . mysqli_error($conn);
+    
+    $errorCode = '125'; // Change this to the desired error code
+    $errorMessage = "Ошибка при обновлении профиля: " . mysqli_error($conn); // Change this to the desired error message
+    header("Location: error.php?code=$errorCode&message=$errorMessage");
+    exit();
 }
 
 mysqli_close($conn);
