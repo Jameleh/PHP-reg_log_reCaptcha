@@ -1,3 +1,4 @@
+#PS:  я использовала Google reCAPTCHA вместо Yandex CAPTCHA. Я сделала этот выбор на основании требований проекта и отсутствия необходимости в информации о кредитной карте, что делает Google reCAPTCHA подходящим выбором  без дополнительных сложностей.
 # My Project
 
 This project contains the following files and scripts:
